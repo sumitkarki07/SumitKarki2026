@@ -36,10 +36,10 @@ html {
   }
   33% {
     transform: translate(30px, -50px) scale(1.1);
-  }
+}
   66% {
     transform: translate(-20px, 20px) scale(0.9);
-  }
+}
 }
 
 @keyframes gentlePulse {
@@ -72,7 +72,7 @@ html {
 /* Glow effects */
 .shadow-glow {
   box-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
-}
+  }
 
 .shadow-neon {
   box-shadow: 0 0 30px rgba(14, 165, 233, 0.6);
