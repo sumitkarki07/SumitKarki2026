@@ -1,0 +1,28 @@
+{
+  "name": "Sumit Karki - Software Engineer Portfolio",
+  "short_name": "Sumit Karki",
+  "description": "Portfolio of Sumit Karki - Software Engineering Student at UW-Green Bay. Full-stack developer, NASA hackathon winner, and GDG leader.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#06b6d4",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-US",
+  "icons": [
+    {
+      "src": "/Image/Sumit.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/Image/Sumit.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["portfolio", "developer", "technology"],
+  "keywords": ["software engineer", "full-stack developer", "react", "python", "java", "portfolio"]
+}

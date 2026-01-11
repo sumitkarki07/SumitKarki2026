@@ -11,7 +11,11 @@ const Hero = () => {
   };
 
   return (
-    <section className="pt-32 pb-20 relative overflow-hidden min-h-screen flex items-center justify-center">
+    <section
+      className="pt-32 pb-20 relative overflow-hidden min-h-screen flex items-center justify-center"
+      itemScope
+      itemType="https://schema.org/Person"
+    >
       {/* Animated Background Blobs */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-cyan-500/20 rounded-full mix-blend-multiply filter blur-3xl animate-blob" />
@@ -20,7 +24,7 @@ const Hero = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
-        <div className="text-center">
+        <header className="text-center">
           {/* Welcome Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -33,25 +37,27 @@ const Hero = () => {
             </span>
           </motion.div>
 
-          {/* Name */}
+          {/* Name - Primary H1 for SEO */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-6xl md:text-7xl lg:text-8xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent leading-tight"
+            itemProp="name"
           >
             Sumit <br className="hidden sm:block" />Karki
           </motion.h1>
 
           {/* Title */}
-          <motion.p
+          <motion.h2
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-xl md:text-2xl text-gray-300 mb-4 max-w-3xl mx-auto"
+            itemProp="jobTitle"
           >
             {personalInfo.title}
-          </motion.p>
+          </motion.h2>
 
           {/* Tagline */}
           <motion.p
@@ -59,6 +65,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
             className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed"
+            itemProp="description"
           >
             {personalInfo.tagline}
           </motion.p>
@@ -116,7 +123,7 @@ const Hero = () => {
               </motion.a>
             ))}
           </motion.div>
-        </div>
+        </header>
       </div>
 
       {/* Scroll Indicator */}

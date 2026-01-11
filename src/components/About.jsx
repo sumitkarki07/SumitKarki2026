@@ -40,8 +40,10 @@ const About = () => {
               <div className="relative bg-slate-900 rounded-2xl overflow-hidden w-80 h-80 md:w-96 md:h-96 shadow-glow">
                 <img
                   src={personalInfo.profileImage}
-                  alt={personalInfo.name}
+                  alt={`Professional headshot of ${personalInfo.name}, Software Engineering Student at UW-Green Bay`}
                   className="w-full h-full object-cover object-center"
+                  itemProp="image"
+                  loading="eager"
                 />
               </div>
             </div>
