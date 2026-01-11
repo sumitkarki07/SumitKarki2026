@@ -173,7 +173,7 @@ npm run lint     # Run ESLint
 
 ---
 
-**Built with ❤️ by Sumit Karki using React & Vite**
+**Built by Sumit Karki using React & Vite**
 
 The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
