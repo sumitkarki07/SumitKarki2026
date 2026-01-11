@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub, FaPaperPlane } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub, FaPaperPlane, FaGlobe } from 'react-icons/fa';
 import { personalInfo } from '../data/portfolioData';
 
 const Contact = () => {
@@ -34,6 +34,7 @@ const Contact = () => {
   const contactInfo = [
     { icon: FaEnvelope, label: 'Email', value: personalInfo.email, href: `mailto:${personalInfo.email}` },
     { icon: FaPhone, label: 'Phone', value: personalInfo.phone, href: `tel:${personalInfo.phone}` },
+    { icon: FaGlobe, label: 'Website', value: personalInfo.website, href: personalInfo.website },
     { icon: FaMapMarkerAlt, label: 'Location', value: personalInfo.location, href: null },
   ];
 

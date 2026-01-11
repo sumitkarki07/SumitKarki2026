@@ -9,6 +9,7 @@ export const personalInfo = {
   phone: "(920) 461-6756",
   linkedin: "https://linkedin.com/in/sumit-karki-sk",
   github: "https://github.com/sumitkarki07",
+  website: "https://www.sumit-karki.com.np",
   profileImage: "/Image/Sumit.jpeg"
 };
 

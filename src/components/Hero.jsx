@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaEnvelope, FaLinkedin, FaGithub, FaPhone, FaChevronDown } from 'react-icons/fa';
+import { FaEnvelope, FaLinkedin, FaGithub, FaPhone, FaChevronDown, FaGlobe } from 'react-icons/fa';
 import { personalInfo } from '../data/portfolioData';
 
 const Hero = () => {
@@ -109,6 +109,7 @@ const Hero = () => {
               { icon: FaLinkedin, href: personalInfo.linkedin, title: 'LinkedIn' },
               { icon: FaGithub, href: personalInfo.github, title: 'GitHub' },
               { icon: FaPhone, href: `tel:${personalInfo.phone}`, title: 'Phone' },
+              { icon: FaGlobe, href: personalInfo.website, title: 'Personal Website' },
             ].map(({ icon: Icon, href, title }) => (
               <motion.a
                 key={title}
