@@ -43,20 +43,36 @@
     <meta name="theme-color" content="#06b6d4" />
     <meta name="msapplication-TileColor" content="#06b6d4" />
     <meta name="application-name" content="Sumit Karki Portfolio" />
+    
+    <!-- Google Search Console Verification (Replace with your verification code) -->
+    <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE" />
 
-    <!-- Structured Data (JSON-LD) -->
+    <!-- Google Analytics 4 -->
+    <!-- Replace G-XXXXXXXXXX with your actual Google Analytics Measurement ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <!-- Structured Data (JSON-LD) - Person Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Sumit Karki",
       "jobTitle": "Software Engineering Student",
-      "description": "Full-stack developer and software engineering student at University of Wisconsin-Green Bay",
+      "description": "Full-stack developer and software engineering student at University of Wisconsin-Green Bay. NASA Space Apps Challenge winner, GDG on Campus Vice-President.",
       "url": "https://www.sumit-karki.com.np",
       "image": "https://www.sumit-karki.com.np/Image/Sumit.jpeg",
+      "email": "mailto:sumitkarki7777@gmail.com",
+      "telephone": "+1-920-617-2172",
       "sameAs": [
         "https://linkedin.com/in/sumit-karki-sk",
-        "https://github.com/sumitkarki07"
+        "https://github.com/sumitkarki07",
+        "https://www.sumit-karki.com.np"
       ],
       "address": {
         "@type": "PostalAddress",
@@ -79,7 +95,10 @@
         "AWS",
         "Spring Boot",
         "Flask",
-        "Tailwind CSS"
+        "Tailwind CSS",
+        "Apache Kafka",
+        "Microservices",
+        "RESTful APIs"
       ],
       "hasOccupation": {
         "@type": "Occupation",
@@ -89,7 +108,96 @@
           "name": "Green Bay",
           "addressCountry": "US"
         }
+      },
+      "award": [
+        "NASA Space Apps Challenge - Galactic Problem Solver (2024)",
+        "UWGB Presidential Scholarship (2024-2028)",
+        "National Scholarship Awardee by Nepal Government",
+        "Dean's List - University of Wisconsin-Green Bay"
+      ],
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "name": "Google Developer Groups on Campus",
+          "url": "https://gdg.community.dev/"
+        },
+        {
+          "@type": "Organization",
+          "name": "Beta Alpha Psi",
+          "url": "https://www.bap.org/"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Structured Data (JSON-LD) - Portfolio Website -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Sumit Karki Portfolio",
+      "description": "Professional portfolio showcasing software engineering projects, achievements, and skills",
+      "url": "https://www.sumit-karki.com.np",
+      "author": {
+        "@type": "Person",
+        "name": "Sumit Karki"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.sumit-karki.com.np/#search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
       }
+    }
+    </script>
+
+    <!-- Structured Data (JSON-LD) - Notable Projects -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Software Projects by Sumit Karki",
+      "itemListElement": [
+        {
+          "@type": "CreativeWork",
+          "position": 1,
+          "name": "Real-Time Weather Event Planner",
+          "description": "NASA Space Apps Challenge winning project using NASA Earth data and Meteomatics API",
+          "author": {
+            "@type": "Person",
+            "name": "Sumit Karki"
+          },
+          "datePublished": "2024-10",
+          "keywords": "Python, Flask, NASA API, Weather Data, Real-time Processing",
+          "award": "NASA Space Apps Challenge - Galactic Problem Solver",
+          "url": "https://github.com/sumitkarki07"
+        },
+        {
+          "@type": "CreativeWork",
+          "position": 2,
+          "name": "Kafka Transaction Processing System",
+          "description": "Event-driven transaction processing system using Apache Kafka and Spring Boot",
+          "author": {
+            "@type": "Person",
+            "name": "Sumit Karki"
+          },
+          "datePublished": "2024-12",
+          "keywords": "Java, Spring Boot, Apache Kafka, Microservices, Event-Driven Architecture",
+          "url": "https://github.com/sumitkarki07"
+        },
+        {
+          "@type": "CreativeWork",
+          "position": 3,
+          "name": "Fitness Tracker Mobile App",
+          "description": "Cross-platform fitness tracking application with workout routines and progress monitoring",
+          "author": {
+            "@type": "Person",
+            "name": "Sumit Karki"
+          },
+          "datePublished": "2024-08",
+          "keywords": "React Native, Expo, Mobile Development, Fitness, Health Tracking",
+          "url": "https://github.com/sumitkarki07"
+        }
+      ]
     }
     </script>
 

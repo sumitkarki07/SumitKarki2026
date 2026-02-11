@@ -5,6 +5,8 @@ import Experience from './components/Experience';
 import Leadership from './components/Leadership';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
+import Blog from './components/Blog';
+import FAQ from './components/FAQ';
 import Awards from './components/Awards';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -28,6 +30,8 @@ function App() {
         <Leadership />
         <Projects />
         <Skills />
+        <Blog />
+        <FAQ />
         <Awards />
         <Contact />
       </main>
