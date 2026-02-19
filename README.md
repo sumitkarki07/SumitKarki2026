@@ -2,25 +2,37 @@
 
 ## 🎨 Website Overview
 
-A **production-ready, modern dark-themed portfolio** built with React, Vite, and Framer Motion. Features glassmorphism effects, smooth animations, responsive design, and interactive timeline components.
+A **production-ready, modern dark-themed portfolio** with an integrated admin dashboard for easy content management. Built with React, Vite, and Framer Motion.
 
 **Live Features:**
 - ⚡ **Vite + React** - Lightning fast development and builds
 - 🎬 **Framer Motion** - Smooth scroll-triggered animations
 - 🎨 **Tailwind CSS v4** - Modern utility-first styling
+- 🎛️ **Admin Dashboard** - Edit content without coding
 - 📱 **Fully responsive** - Mobile-first design
 - 🌌 **Dark mode** with cyan/blue neon accents
 - 💫 **Interactive timeline** for leadership & activities
 - 🎴 **Premium project cards** with hover effects
 - 📊 **Skill tags** organized by category
-- 📝 **Blog section** with SEO-optimized articles
-- ❓ **FAQ section** with structured data
 - 🏆 **Awards showcase** with icon badges
 - 📧 **Contact form** with validation
 - ♿ **Accessibility optimized**
 - 🔍 **SEO optimized** with structured data, meta tags, sitemap
 - 📊 **Google Analytics** integration
 - ⚡ **Performance monitoring** with Web Vitals tracking
+- 🔐 **Secure admin** with environment variable password
+
+---
+
+## 🎛️ Admin Dashboard
+
+**Manage your entire portfolio without touching code!**
+
+- **Access**: `/admin`
+- **Password**: Set via environment variable `VITE_ADMIN_PASSWORD`
+- **Features**: Add/edit/delete experience, projects, skills, awards, and more
+
+See `DASHBOARD_GUIDE.md` for complete documentation.
 
 ---
 
@@ -79,10 +91,14 @@ cd SumitPortfolia
 # Install dependencies
 npm install
 
+# Create .env file and set admin password
+echo "VITE_ADMIN_PASSWORD=your_password_here" > .env
+
 # Start development server
 npm run dev
 ```
-Open [http://localhost:3000](http://localhost:3000) to view your app.
+Open [http://localhost:5173](http://localhost:5173) to view your portfolio.
+Access admin at [http://localhost:5173/admin](http://localhost:5173/admin).
 
 ### Building for Production
 ```bash
@@ -94,11 +110,16 @@ Builds the app for production to the `dist` folder.
 
 ## 🌐 Deployment to Vercel
 
-### Option 1: Automatic (Recommended)
+### Prerequisites
+1. Create `.env` file with `VITE_ADMIN_PASSWORD=your_secure_password`
+2. Add `.env` to `.gitignore` (already done)
+
+### Deployment Steps
+
 1. **Push to GitHub**:
    ```bash
    git add .
-   git commit -m "feat: migrate portfolio to React with animations"
+   git commit -m "feat: Ready for production deployment"
    git push origin main
    ```
 
@@ -106,22 +127,17 @@ Builds the app for production to the `dist` folder.
    - Go to [vercel.com](https://vercel.com)
    - Click "New Project"
    - Import your GitHub repository
-   - Vercel will auto-detect Vite and deploy
-   - Add your custom domain `www.sumit-karki.com.np` in settings
+   - **IMPORTANT**: Add environment variable:
+     - Name: `VITE_ADMIN_PASSWORD`
+     - Value: Your secure password
+   - Click "Deploy"
 
-### Option 2: Manual Deploy
-```bash
-# Build the project
-npm run build
+3. **Add Custom Domain**:
+   - In Vercel: Settings → Domains
+   - Add `www.sumit-karki.com.np`
+   - Update DNS at your registrar (see `DEPLOYMENT.md`)
 
-# Deploy using Vercel CLI (if installed)
-npx vercel --prod
-
-# Or upload the dist/ folder manually
-```
-
-### Custom Domain Setup
-Your `CNAME` file is already configured in `public/CNAME` with `www.sumit-karki.com.np`.
+**📖 See `DEPLOYMENT.md` for detailed deployment guide.**
 
 ---
 

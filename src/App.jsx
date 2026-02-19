@@ -1,42 +1,42 @@
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Experience from './components/Experience';
-import Leadership from './components/Leadership';
-import Projects from './components/Projects';
-import Skills from './components/Skills';
-import Blog from './components/Blog';
-import FAQ from './components/FAQ';
-import Awards from './components/Awards';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { AdminProvider, useAdmin } from './data/AdminContext';
+
+// Portfolio components
+import Portfolio from './Portfolio';
+
+// Admin components
+import AdminLogin from './admin/AdminLogin';
+import AdminDashboard from './admin/AdminDashboard';
+
+// Protected Route Component
+const ProtectedRoute = ({ children }) => {
+  const { isAuthenticated } = useAdmin();
+  return isAuthenticated ? children : <Navigate to="/admin" replace />;
+};
 
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
-      {/* Skip to main content for accessibility */}
-      <a
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-cyan-500 text-white px-4 py-2 rounded z-50"
-      >
-        Skip to main content
-      </a>
-
-      <Navbar />
-      <main id="main-content" role="main">
-        <Hero />
-        <About />
-        <Experience />
-        <Leadership />
-        <Projects />
-        <Skills />
-        <Blog />
-        <FAQ />
-        <Awards />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <AdminProvider>
+      <Router>
+        <Routes>
+          {/* Public Portfolio */}
+          <Route path="/" element={<Portfolio />} />
+          
+          {/* Admin Login */}
+          <Route path="/admin" element={<AdminLogin />} />
+          
+          {/* Protected Admin Dashboard */}
+          <Route
+            path="/admin/dashboard"
+            element={
+              <ProtectedRoute>
+                <AdminDashboard />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+      </Router>
+    </AdminProvider>
   );
 }
 
