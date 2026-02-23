@@ -1,4 +1,4 @@
-# Sumit Karki - React Portfolio Website
+# Sumit Karki - Portfolio Website
 
 ## 🎨 Website Overview
 
