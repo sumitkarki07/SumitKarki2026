@@ -1,229 +1,166 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub, FaPaperPlane, FaGlobe } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub, FaPaperPlane } from 'react-icons/fa';
 import { personalInfo } from '../data/portfolioData';
+import SectionTitle from './SectionTitle';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
-    message: ''
+    message: '',
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleChange = (event) => {
+    setFormData({ ...formData, [event.target.name]: event.target.value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    setIsSubmitting(false);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const body = encodeURIComponent(
+      `From: ${formData.name} <${formData.email}>\n\n${formData.message}`
+    );
+    const subject = encodeURIComponent(formData.subject);
+    window.location.href = `mailto:${personalInfo.email}?subject=${subject}&body=${body}`;
     setSubmitted(true);
     setFormData({ name: '', email: '', subject: '', message: '' });
-    
-    setTimeout(() => setSubmitted(false), 5000);
+    setTimeout(() => setSubmitted(false), 4000);
   };
 
-  const contactInfo = [
+  const details = [
     { icon: FaEnvelope, label: 'Email', value: personalInfo.email, href: `mailto:${personalInfo.email}` },
     { icon: FaPhone, label: 'Phone', value: personalInfo.phone, href: `tel:${personalInfo.phone}` },
-    { icon: FaGlobe, label: 'Website', value: personalInfo.website, href: personalInfo.website },
     { icon: FaMapMarkerAlt, label: 'Location', value: personalInfo.location, href: null },
   ];
 
   return (
-    <section id="contact" className="py-20 bg-slate-800/50 backdrop-blur-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Get In Touch</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 mx-auto rounded-full mb-6" />
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-            I'm currently looking for internship opportunities and always open to interesting projects and collaborations.
-          </p>
-        </motion.div>
+    <section id="contact" className="relative py-14 sm:py-20 lg:py-24">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <SectionTitle
+          eyebrow="Get in touch"
+          title="Let’s work together"
+          subtitle="Open to internships, research collaborations, and software engineering opportunities."
+        />
 
-        <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Contact Info */}
+        <div className="grid gap-10 lg:grid-cols-2">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
           >
-            <h3 className="text-2xl font-bold text-white mb-8">Contact Information</h3>
-            
-            <div className="space-y-6">
-              {contactInfo.map((item, index) => {
+            <div className="space-y-4">
+              {details.map((item) => {
                 const Icon = item.icon;
-                const content = (
-                  <motion.div
-                    whileHover={{ x: 8, color: '#22d3ee' }}
-                    className="flex items-center gap-4 text-gray-300 hover:text-cyan-400 transition-colors cursor-pointer"
-                  >
-                    <div className="w-12 h-12 bg-cyan-500/10 rounded-lg flex items-center justify-center">
-                      <Icon className="text-cyan-400 text-xl" />
+                const inner = (
+                  <div className="flex items-center gap-3 rounded-2xl border border-ink/8 bg-cream p-3.5 transition hover:-translate-y-0.5 hover:border-coral/40 sm:gap-4 sm:p-4">
+                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-mist text-teal sm:h-12 sm:w-12">
+                      <Icon />
+                    </span>
+                    <div className="min-w-0">
+                      <p className="text-xs uppercase tracking-wider text-ink-soft">{item.label}</p>
+                      <p className="break-words font-semibold text-ink">{item.value}</p>
                     </div>
-                    <div>
-                      <div className="text-gray-500 text-sm">{item.label}</div>
-                      <div className="font-medium">{item.value}</div>
-                    </div>
-                  </motion.div>
+                  </div>
                 );
-
-                return (
-                  <motion.div
-                    key={item.label}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
-                  >
-                    {item.href ? (
-                      <a href={item.href}>{content}</a>
-                    ) : (
-                      content
-                    )}
-                  </motion.div>
+                return item.href ? (
+                  <a key={item.label} href={item.href}>
+                    {inner}
+                  </a>
+                ) : (
+                  <div key={item.label}>{inner}</div>
                 );
               })}
             </div>
 
-            {/* Social Links */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.4 }}
-              className="mt-10"
-            >
-              <h4 className="text-lg font-semibold text-white mb-4">Connect With Me</h4>
-              <div className="flex gap-4">
-                <motion.a
-                  href={personalInfo.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1, y: -4 }}
-                  className="w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center text-blue-400 hover:bg-blue-600/30 transition-colors"
-                >
-                  <FaLinkedin size={24} />
-                </motion.a>
-                <motion.a
-                  href={personalInfo.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1, y: -4 }}
-                  className="w-12 h-12 bg-gray-600/20 rounded-lg flex items-center justify-center text-gray-400 hover:bg-gray-600/30 transition-colors"
-                >
-                  <FaGithub size={24} />
-                </motion.a>
-              </div>
-            </motion.div>
+            <div className="mt-8 flex gap-3">
+              <a
+                href={personalInfo.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="grid h-12 w-12 place-items-center rounded-full bg-ink text-cream transition hover:bg-coral"
+                aria-label="LinkedIn"
+              >
+                <FaLinkedin />
+              </a>
+              <a
+                href={personalInfo.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="grid h-12 w-12 place-items-center rounded-full bg-ink text-cream transition hover:bg-teal"
+                aria-label="GitHub"
+              >
+                <FaGithub />
+              </a>
+            </div>
           </motion.div>
 
-          {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
+          <motion.form
+            onSubmit={handleSubmit}
+            initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            className="space-y-4 rounded-3xl border border-ink/8 bg-cream p-4 shadow-[0_20px_50px_rgba(27,61,58,0.08)] sm:p-6 md:p-8"
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <motion.div
-                  whileFocus={{ scale: 1.02 }}
-                >
-                  <label className="block text-gray-400 mb-2 text-sm">Your Name</label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-slate-800/80 border border-cyan-500/20 rounded-lg text-white focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all"
-                    placeholder="John Doe"
-                  />
-                </motion.div>
-                <motion.div
-                  whileFocus={{ scale: 1.02 }}
-                >
-                  <label className="block text-gray-400 mb-2 text-sm">Your Email</label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-slate-800/80 border border-cyan-500/20 rounded-lg text-white focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all"
-                    placeholder="john@example.com"
-                  />
-                </motion.div>
-              </div>
-
-              <motion.div whileFocus={{ scale: 1.02 }}>
-                <label className="block text-gray-400 mb-2 text-sm">Subject</label>
+            <div className="grid gap-4 md:grid-cols-2">
+              <label className="block">
+                <span className="mb-1.5 block text-sm text-ink-soft">Name</span>
                 <input
-                  type="text"
-                  name="subject"
-                  value={formData.subject}
+                  name="name"
+                  value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-slate-800/80 border border-cyan-500/20 rounded-lg text-white focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all"
-                  placeholder="Internship Opportunity"
+                  autoComplete="name"
+                  className="w-full rounded-xl border border-ink/10 bg-parchment px-4 py-3 text-base text-ink outline-none transition focus:border-coral"
+                  placeholder="Your name"
                 />
-              </motion.div>
-
-              <motion.div whileFocus={{ scale: 1.02 }}>
-                <label className="block text-gray-400 mb-2 text-sm">Message</label>
-                <textarea
-                  name="message"
-                  value={formData.message}
+              </label>
+              <label className="block">
+                <span className="mb-1.5 block text-sm text-ink-soft">Email</span>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
                   onChange={handleChange}
                   required
-                  rows="5"
-                  className="w-full px-4 py-3 bg-slate-800/80 border border-cyan-500/20 rounded-lg text-white focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all resize-none"
-                  placeholder="Tell me about your project or opportunity..."
+                  autoComplete="email"
+                  className="w-full rounded-xl border border-ink/10 bg-parchment px-4 py-3 text-base text-ink outline-none transition focus:border-coral"
+                  placeholder="you@email.com"
                 />
-              </motion.div>
-
-              <motion.button
-                type="submit"
-                disabled={isSubmitting}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full py-4 px-8 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-lg hover:shadow-neon transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-70"
-              >
-                {isSubmitting ? (
-                  <>
-                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                    Sending...
-                  </>
-                ) : submitted ? (
-                  <>
-                    ✓ Message Sent!
-                  </>
-                ) : (
-                  <>
-                    <FaPaperPlane />
-                    Send Message
-                  </>
-                )}
-              </motion.button>
-            </form>
-          </motion.div>
+              </label>
+            </div>
+            <label className="block">
+              <span className="mb-1.5 block text-sm text-ink-soft">Subject</span>
+              <input
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                required
+                className="w-full rounded-xl border border-ink/10 bg-parchment px-4 py-3 text-base text-ink outline-none transition focus:border-coral"
+                placeholder="Internship inquiry or collaboration"
+              />
+            </label>
+            <label className="block">
+              <span className="mb-1.5 block text-sm text-ink-soft">Message</span>
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                required
+                rows="5"
+                className="w-full resize-none rounded-xl border border-ink/10 bg-parchment px-4 py-3 text-base text-ink outline-none transition focus:border-coral"
+                placeholder="A short note about the role or project"
+              />
+            </label>
+            <button
+              type="submit"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-coral py-3.5 font-semibold text-cream shadow-[0_12px_28px_rgba(228,90,60,0.32)] transition hover:bg-coral-deep"
+            >
+              <FaPaperPlane />
+              {submitted ? 'Opening your email…' : 'Send message'}
+            </button>
+          </motion.form>
         </div>
       </div>
     </section>

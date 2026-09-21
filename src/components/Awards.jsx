@@ -1,80 +1,51 @@
 import { motion } from 'framer-motion';
-import { FaTrophy, FaStar, FaRocket, FaMedal, FaPalette, FaHandshake } from 'react-icons/fa';
+import { FaTrophy, FaStar, FaRocket, FaMedal, FaHandshake, FaBookOpen } from 'react-icons/fa';
 import { awards } from '../data/portfolioData';
+import SectionTitle from './SectionTitle';
 
 const iconMap = {
-  FaTrophy: FaTrophy,
-  FaStar: FaStar,
-  FaRocket: FaRocket,
-  FaMedal: FaMedal,
-  FaPalette: FaPalette,
-  FaHandshake: FaHandshake
+  FaTrophy,
+  FaStar,
+  FaRocket,
+  FaMedal,
+  FaHandshake,
+  FaBookOpen,
 };
 
-const colorClasses = {
-  yellow: { bg: 'bg-yellow-500/20', text: 'text-yellow-400', border: 'border-yellow-500/30', shadow: 'rgba(234, 179, 8, 0.4)' },
-  blue: { bg: 'bg-blue-500/20', text: 'text-blue-400', border: 'border-blue-500/30', shadow: 'rgba(14, 165, 233, 0.4)' },
-  purple: { bg: 'bg-purple-500/20', text: 'text-purple-400', border: 'border-purple-500/30', shadow: 'rgba(139, 92, 246, 0.4)' },
-  green: { bg: 'bg-green-500/20', text: 'text-green-400', border: 'border-green-500/30', shadow: 'rgba(34, 197, 94, 0.4)' },
-  orange: { bg: 'bg-orange-500/20', text: 'text-orange-400', border: 'border-orange-500/30', shadow: 'rgba(249, 115, 22, 0.4)' },
-  cyan: { bg: 'bg-cyan-500/20', text: 'text-cyan-400', border: 'border-cyan-500/30', shadow: 'rgba(6, 182, 212, 0.4)' },
-};
+const rotations = ['-rotate-2', 'rotate-1', '-rotate-1', 'rotate-2', '-rotate-2', 'rotate-1'];
 
-const Awards = () => {
-  return (
-    <section id="awards" className="py-20 bg-slate-900/30 backdrop-blur-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Honors & Awards</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 mx-auto rounded-full" />
-        </motion.div>
+const Awards = () => (
+  <section id="awards" className="relative overflow-x-hidden bg-sand/40 py-14 sm:py-20 lg:py-24">
+    <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <SectionTitle eyebrow="Recognition" title="Honors & awards" />
 
-        {/* Awards Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {awards.map((award, index) => {
-            const Icon = iconMap[award.icon];
-            const colors = colorClasses[award.color] || colorClasses.yellow;
-
-            return (
+      <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {awards.map((award, index) => {
+          const Icon = iconMap[award.icon];
+          return (
+            <motion.article
+              key={award.title}
+              initial={{ opacity: 0, y: 24, rotate: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.45, delay: index * 0.06 }}
+              whileHover={{ y: -8, rotate: 0, scale: 1.02 }}
+              className={`rounded-3xl border border-ink/8 bg-cream p-5 text-center shadow-[0_16px_32px_rgba(27,61,58,0.08)] max-sm:rotate-0 sm:p-6 ${rotations[index]}`}
+            >
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ 
-                  y: -8, 
-                  boxShadow: `0 20px 40px ${colors.shadow}`,
-                }}
-                className={`bg-slate-800/80 backdrop-blur p-6 rounded-xl border ${colors.border} transition-all duration-300 text-center`}
+                whileHover={{ rotate: -12, scale: 1.1 }}
+                className="mx-auto mb-4 grid h-14 w-14 place-items-center rounded-full bg-gold/20 text-xl text-coral"
               >
-                {/* Icon */}
-                <motion.div
-                  whileHover={{ rotate: 10, scale: 1.1 }}
-                  className={`w-16 h-16 ${colors.bg} rounded-full flex items-center justify-center mx-auto mb-4`}
-                >
-                  {Icon && <Icon className={`${colors.text} text-2xl`} />}
-                </motion.div>
-
-                {/* Title */}
-                <h3 className={`text-lg font-bold ${colors.text} mb-2`}>{award.title}</h3>
-
-                {/* Description */}
-                <p className="text-gray-400 text-sm">{award.description}</p>
+                {Icon && <Icon />}
               </motion.div>
-            );
-          })}
-        </div>
+              <h3 className="font-display text-lg font-bold text-ink">{award.title}</h3>
+              <p className="mt-2 text-sm text-ink-soft">{award.description}</p>
+            </motion.article>
+          );
+        })}
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default Awards;
