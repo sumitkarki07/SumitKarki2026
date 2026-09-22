@@ -10,6 +10,7 @@ const Footer = () => {
     { name: 'Research', href: '#research' },
     { name: 'Projects', href: '#projects' },
     { name: 'Contact', href: '#contact' },
+    { name: 'About this profile', href: '#faq' },
   ];
 
   return (
@@ -28,7 +29,7 @@ const Footer = () => {
             <span className="font-display text-xl font-extrabold text-ink">Sumit Karki</span>
           </a>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-ink-soft">
-            Software engineering student at UW–Green Bay. Web development, applied machine learning, and published research.
+            Sumit Karki (SK) is a software engineering student at the University of Wisconsin–Green Bay in Green Bay, Wisconsin. Web development on uwgb.edu, applied machine learning, and published research.
           </p>
         </div>
 
@@ -58,25 +59,25 @@ const Footer = () => {
             <a
               href={personalInfo.linkedin}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="me noopener noreferrer"
               className="grid h-10 w-10 place-items-center rounded-full bg-cream text-ink hover:text-coral"
-              aria-label="LinkedIn"
+              aria-label="Sumit Karki on LinkedIn"
             >
               <FaLinkedin />
             </a>
             <a
               href={personalInfo.github}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="me noopener noreferrer"
               className="grid h-10 w-10 place-items-center rounded-full bg-cream text-ink hover:text-coral"
-              aria-label="GitHub"
+              aria-label="Sumit Karki on GitHub"
             >
               <FaGithub />
             </a>
             <a
               href={`mailto:${personalInfo.email}`}
               className="grid h-10 w-10 place-items-center rounded-full bg-cream text-ink hover:text-coral"
-              aria-label="Email"
+              aria-label="Email Sumit Karki"
             >
               <FaEnvelope />
             </a>

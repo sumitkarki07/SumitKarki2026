@@ -1,0 +1,16 @@
+/* TEAM */
+Name: Sumit Karki
+Also known as: Sumit, Sumit Karki SK
+Site: https://www.sumit-karki.com.np/
+Location: Green Bay, Wisconsin, United States
+School: University of Wisconsin–Green Bay (UWGB)
+Role: Software Engineering Student, Student Web Developer (uwgb.edu)
+Contact: sumitkarki49@gmail.com
+LinkedIn: https://www.linkedin.com/in/sumit-karki-sk/
+GitHub: https://github.com/sumitkarki07
+
+/* SITE */
+Last update: 2026-09-22
+Language: English
+Standards: HTML5, Schema.org Person, ProfilePage, ImageObject, FAQPage
+Doctype: HTML5

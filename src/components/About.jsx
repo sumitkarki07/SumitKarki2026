@@ -8,8 +8,8 @@ const About = () => (
     <div className="mx-auto max-w-6xl px-4 sm:px-6">
       <SectionTitle
         eyebrow="Overview"
-        title="About me"
-        subtitle="Software engineering at UW–Green Bay, with work in production web systems and applied machine learning."
+        title="About Sumit Karki"
+        subtitle="UW–Green Bay software engineering student in Green Bay, Wisconsin — also known as Sumit Karki SK."
       />
 
       <div className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
@@ -21,15 +21,21 @@ const About = () => (
           className="relative mx-auto w-full max-w-[280px] sm:max-w-md"
         >
           <div className="absolute -inset-2 rotate-2 rounded-[2rem] bg-gradient-to-br from-coral/40 to-teal/40 sm:-inset-3 sm:rotate-3" />
-          <div className="relative overflow-hidden rounded-[1.7rem] bg-ink shadow-[0_22px_50px_rgba(27,61,58,0.18)]">
+          <figure className="relative overflow-hidden rounded-[1.7rem] bg-ink shadow-[0_22px_50px_rgba(27,61,58,0.18)]">
             <img
               src={personalInfo.aboutImage}
-              alt="Sumit Karki at the Google Developer Groups North America Summit, May 21, 2026"
+              alt="Sumit Karki (SK), University of Wisconsin–Green Bay student, at the Google Developer Groups North America Summit on May 21, 2026"
+              title="Sumit Karki at the GDG North America Summit, May 2026"
               width="768"
               height="1024"
+              fetchPriority="high"
+              decoding="async"
               className="aspect-[4/5] w-full object-cover object-[52%_86%]"
             />
-          </div>
+            <figcaption className="sr-only">
+              Photo of Sumit Karki, a UWGB student from Green Bay, Wisconsin, standing at the GDG North America Summit sign on May 21, 2026.
+            </figcaption>
+          </figure>
         </motion.div>
 
         <motion.div

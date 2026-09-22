@@ -1,14 +1,16 @@
 {
-  "name": "Sumit Karki - Software Engineer Portfolio",
+  "name": "Sumit Karki (SK) — UWGB Software Engineering Student",
   "short_name": "Sumit Karki",
-  "description": "Portfolio of Sumit Karki, software engineering student at UW–Green Bay, ICMLA 2026 co-author, and student web developer.",
+  "description": "Official portfolio of Sumit Karki, also known as Sumit Karki SK. Software engineering student at the University of Wisconsin–Green Bay in Green Bay, Wisconsin.",
   "start_url": "/",
+  "id": "/",
   "display": "standalone",
   "background_color": "#F4EDE2",
   "theme_color": "#E45A3C",
   "orientation": "portrait-primary",
   "scope": "/",
   "lang": "en-US",
+  "dir": "ltr",
   "icons": [
     {
       "src": "/agent-icon.png",
@@ -23,6 +25,13 @@
       "purpose": "any maskable"
     }
   ],
-  "categories": ["portfolio", "developer", "technology"],
-  "keywords": ["software engineer", "ICMLA", "computer vision", "python", "typescript", "UW-Green Bay", "portfolio"]
+  "categories": ["portfolio", "education", "developer", "technology"],
+  "keywords": [
+    "Sumit Karki",
+    "Sumit Karki SK",
+    "UWGB student",
+    "University of Wisconsin Green Bay",
+    "Green Bay",
+    "software engineering"
+  ]
 }

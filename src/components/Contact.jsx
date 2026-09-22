@@ -41,7 +41,7 @@ const Contact = () => {
         <SectionTitle
           eyebrow="Get in touch"
           title="Let’s work together"
-          subtitle="Open to internships, research collaborations, and software engineering opportunities."
+          subtitle="Reach Sumit Karki in Green Bay, Wisconsin — open to internships, research collaborations, and software engineering opportunities."
         />
 
         <div className="grid gap-10 lg:grid-cols-2">
@@ -78,18 +78,18 @@ const Contact = () => {
               <a
                 href={personalInfo.linkedin}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="me noopener noreferrer"
                 className="grid h-12 w-12 place-items-center rounded-full bg-ink text-cream transition hover:bg-coral"
-                aria-label="LinkedIn"
+                aria-label="Sumit Karki on LinkedIn"
               >
                 <FaLinkedin />
               </a>
               <a
                 href={personalInfo.github}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="me noopener noreferrer"
                 className="grid h-12 w-12 place-items-center rounded-full bg-ink text-cream transition hover:bg-teal"
-                aria-label="GitHub"
+                aria-label="Sumit Karki on GitHub"
               >
                 <FaGithub />
               </a>

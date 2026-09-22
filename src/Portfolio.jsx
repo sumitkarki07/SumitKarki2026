@@ -7,6 +7,7 @@ import Leadership from './components/Leadership';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Awards from './components/Awards';
+import Faq from './components/Faq';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WebSwinger from './components/WebSwinger';
@@ -46,6 +47,7 @@ function Portfolio() {
         <Projects />
         <Skills />
         <Awards />
+        <Faq />
         <Contact />
       </main>
       <Footer />

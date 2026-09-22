@@ -8,7 +8,7 @@ const Leadership = () => (
       <SectionTitle
         eyebrow="Campus & community"
         title="Leadership"
-        subtitle="Developer communities, student organizations, and technical events."
+        subtitle="UW–Green Bay student government, GDG on Campus, and technical events in Green Bay."
       />
 
       <div className="relative mx-auto max-w-4xl">

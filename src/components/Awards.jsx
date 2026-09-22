@@ -17,7 +17,11 @@ const rotations = ['-rotate-2', 'rotate-1', '-rotate-1', 'rotate-2', '-rotate-2'
 const Awards = () => (
   <section id="awards" className="relative overflow-x-hidden bg-sand/40 py-14 sm:py-20 lg:py-24">
     <div className="mx-auto max-w-6xl px-4 sm:px-6">
-      <SectionTitle eyebrow="Recognition" title="Honors & awards" />
+      <SectionTitle
+        eyebrow="Recognition"
+        title="Honors & awards"
+        subtitle="Scholarships, campus honors, and published research associated with Sumit Karki at UW–Green Bay."
+      />
 
       <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {awards.map((award, index) => {

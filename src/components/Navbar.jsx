@@ -53,6 +53,7 @@ const Navbar = () => {
           href="#top"
           onClick={(event) => handleNav(event, '#top')}
           className="flex min-w-0 items-center gap-2 sm:gap-3"
+          aria-label="Sumit Karki — UW–Green Bay student portfolio home"
         >
           <AgentMark className="h-9 w-9 shrink-0 sm:h-11 sm:w-11" />
           <span className="truncate font-display text-base font-extrabold tracking-tight text-ink sm:text-lg">

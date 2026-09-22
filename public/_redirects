@@ -1,6 +1,10 @@
-# Netlify redirects for SPA
-/*    /index.html   200
-
-# SEO redirects
-/sitemap.xml    /sitemap.xml    200
+# Static discovery files (do not send to the SPA)
+/llms.txt       /llms.txt       200
+/humans.txt     /humans.txt     200
+/ai.txt         /ai.txt         200
 /robots.txt     /robots.txt     200
+/sitemap.xml    /sitemap.xml    200
+/manifest.json  /manifest.json  200
+
+# SPA fallback
+/*    /index.html   200

@@ -60,6 +60,7 @@ const Hero = () => {
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
             className="font-display text-[2.65rem] font-extrabold leading-[0.95] tracking-tight text-ink sm:text-6xl md:text-7xl"
           >
+            <span className="sr-only">Sumit Karki, also known as Sumit Karki SK, UW–Green Bay student in Green Bay, Wisconsin. </span>
             Sumit
             <br />
             <span className="scribble-underline text-coral">Karki</span>
@@ -71,8 +72,7 @@ const Hero = () => {
             transition={{ delay: 0.55 }}
             className="mt-4 text-base text-ink-soft sm:mt-6 sm:text-xl"
           >
-            {personalInfo.title}
-            <span className="hidden sm:inline"> · {personalInfo.location}</span>
+            {personalInfo.headline}
           </motion.h2>
 
           <motion.p
@@ -122,8 +122,8 @@ const Hero = () => {
                 key={label}
                 href={href}
                 target={href.startsWith('http') ? '_blank' : undefined}
-                rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                aria-label={label}
+                rel={href.startsWith('http') ? 'me noopener noreferrer' : undefined}
+                aria-label={`${label} — Sumit Karki`}
                 className="grid h-11 w-11 place-items-center rounded-full border border-ink/10 bg-cream text-ink-soft transition hover:-translate-y-1 hover:border-coral hover:text-coral"
               >
                 <Icon size={18} />

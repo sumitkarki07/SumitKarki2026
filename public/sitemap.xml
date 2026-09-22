@@ -1,9 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.sumit-karki.com.np/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.sumit-karki.com.np/Image/sumit-karki-uwgb-green-bay.jpg</image:loc>
+      <image:title>Sumit Karki (SK), UW–Green Bay software engineering student</image:title>
+      <image:caption>Portrait of Sumit Karki, University of Wisconsin–Green Bay student in Green Bay, Wisconsin</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.sumit-karki.com.np/Image/sumit-karki-gdg-north-america-summit-2026.jpg</image:loc>
+      <image:title>Sumit Karki at the GDG North America Summit 2026</image:title>
+      <image:caption>Sumit Karki, UWGB student, at the Google Developer Groups North America Summit on May 21, 2026</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.sumit-karki.com.np/Image/sumit-karki-nexhacks-2026-carnegie-mellon.jpg</image:loc>
+      <image:title>Sumit Karki at NexHacks 2026, Carnegie Mellon</image:title>
+      <image:caption>Sumit Karki and teammates in NexHacks 2026 hoodies at Carnegie Mellon University</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.sumit-karki.com.np/Image/sumit-karki-nexhacks-2026-cmu-seal.jpg</image:loc>
+      <image:title>Sumit Karki NexHacks 2026 team at the CMU seal</image:title>
+      <image:caption>Sumit Karki and the NexHacks 2026 team at the Carnegie Mellon University seal</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.sumit-karki.com.np/Image/aitp-award.jpg</image:loc>
+      <image:title>Sumit Karki receiving the AITP Sherry Anklam Memorial Award</image:title>
+      <image:caption>Sumit Karki receiving the AITP $1,000 scholarship in July 2026</image:caption>
+    </image:image>
   </url>
 </urlset>

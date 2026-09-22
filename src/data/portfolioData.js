@@ -1,21 +1,25 @@
 export const personalInfo = {
   name: "Sumit Karki",
+  shortName: "Sumit",
+  aliases: ["Sumit Karki SK", "Sumit Karki sk", "sumit karki sk"],
   title: "Software Engineering Student · Web Developer",
+  headline: "Software Engineering Student at UW–Green Bay · Green Bay, WI",
   tagline:
     "Building production web systems and applied machine learning that connect software to real-world infrastructure.",
-  location: "Green Bay, WI",
+  location: "Green Bay, Wisconsin",
+  locationShort: "Green Bay, WI",
   email: "sumitkarki49@gmail.com",
   phone: "(920) 461-6756",
   linkedin: "https://www.linkedin.com/in/sumit-karki-sk/",
   github: "https://github.com/sumitkarki07",
   website: "https://www.sumit-karki.com.np",
-  profileImage: "/Image/Sumit.jpeg",
-  aboutImage: "/Image/gdg-na-summit.jpg",
+  profileImage: "/Image/sumit-karki-uwgb-green-bay.jpg",
+  aboutImage: "/Image/sumit-karki-gdg-north-america-summit-2026.jpg",
 };
 
 export const about = {
   paragraphs: [
-    `I am a Software Engineering student at the <strong>University of Wisconsin–Green Bay</strong>, focused on full-stack development, applied AI, and research that moves from the lab into production systems.`,
+    `I am <strong>Sumit Karki</strong> (also known as <strong>Sumit Karki SK</strong>), a software engineering student at the <strong>University of Wisconsin–Green Bay (UWGB)</strong> in <strong>Green Bay, Wisconsin</strong>. I focus on full-stack development, applied AI, and research that moves from the lab into production systems.`,
     `As a <strong>Student Web Developer</strong> in UWGB’s Division of Information Technology, I maintain <strong>uwgb.edu</strong>, the university’s public website and CMS, with an emphasis on reliability, accessibility, and structured debugging across authentication, APIs, and content delivery.`,
     `My research includes <strong>computer-vision models for pavement distress assessment</strong>, published at <strong>ICMLA 2026</strong>, and data-driven HVAC analysis through the IEEE EPS program. I serve as <strong>Equity & Diversity Chair</strong> for the Student Government Association, <strong>Vice President of GDG on Campus</strong>, and help organize HackGB.`,
   ],
@@ -178,12 +182,16 @@ export const projects = [
     ],
     images: [
       {
-        src: "/Image/nexhacks-team.jpg",
-        alt: "Sumit Karki and teammates in NexHacks 2026 hoodies during the 24-hour build at Carnegie Mellon",
+        src: "/Image/sumit-karki-nexhacks-2026-carnegie-mellon.jpg",
+        alt: "Sumit Karki, UW–Green Bay student, with teammates in NexHacks 2026 hoodies during the 24-hour build at Carnegie Mellon University",
+        width: 1024,
+        height: 680,
       },
       {
-        src: "/Image/nexhacks-cmu.jpg",
-        alt: "NexHacks 2026 team at the Carnegie Mellon University seal in Pittsburgh",
+        src: "/Image/sumit-karki-nexhacks-2026-cmu-seal.jpg",
+        alt: "Sumit Karki and the NexHacks 2026 team at the Carnegie Mellon University seal in Pittsburgh",
+        width: 1024,
+        height: 680,
       },
     ],
     links: [

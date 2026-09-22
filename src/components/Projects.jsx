@@ -64,6 +64,11 @@ const Projects = () => {
                           key={image.src}
                           src={image.src}
                           alt={image.alt}
+                          title={image.alt}
+                          width={image.width || 1024}
+                          height={image.height || 680}
+                          loading="lazy"
+                          decoding="async"
                           className={`h-36 w-full rounded-2xl object-cover sm:h-44 ${
                             imageIndex === 0 ? 'object-[78%_center]' : 'object-[center_40%]'
                           }`}
