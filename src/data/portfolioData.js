@@ -17,7 +17,7 @@ export const about = {
   paragraphs: [
     `I am a Software Engineering student at the <strong>University of Wisconsin–Green Bay</strong>, focused on full-stack development, applied AI, and research that moves from the lab into production systems.`,
     `As a <strong>Student Web Developer</strong> in UWGB’s Division of Information Technology, I maintain <strong>uwgb.edu</strong>, the university’s public website and CMS, with an emphasis on reliability, accessibility, and structured debugging across authentication, APIs, and content delivery.`,
-    `My research includes <strong>computer-vision models for pavement distress assessment</strong>, published at <strong>ICMLA 2026</strong>, and data-driven HVAC analysis through the IEEE EPS program. I also serve as <strong>Vice President of GDG on Campus</strong> and help organize HackGB.`,
+    `My research includes <strong>computer-vision models for pavement distress assessment</strong>, published at <strong>ICMLA 2026</strong>, and data-driven HVAC analysis through the IEEE EPS program. I serve as <strong>Equity & Diversity Chair</strong> for the Student Government Association, <strong>Vice President of GDG on Campus</strong>, and help organize HackGB.`,
   ],
   stats: [
     { value: 3.82, decimals: 2, label: "GPA" },
@@ -76,6 +76,15 @@ export const experience = [
 ];
 
 export const leadership = [
+  {
+    title: "Equity & Diversity Chair",
+    organization: "Student Government Association – UW–Green Bay",
+    duration: "Sep 2026 – Present",
+    achievements: [
+      "Represent student equity and diversity priorities in Student Government Association work",
+      "Support inclusive campus initiatives and student advocacy through SGA",
+    ],
+  },
   {
     title: "Lead Hackathon Organizer",
     organization: "HackGB · GDG on Campus UW–Green Bay",
